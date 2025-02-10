@@ -42,6 +42,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Touch
+$(call soong_config_set,OPLUS_LINEAGE_TOUCH_HAL,ENABLE_OPLUSTOUCH,true)
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator.service.oplus-richtap
