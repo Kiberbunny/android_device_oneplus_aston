@@ -7,10 +7,6 @@
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
-# Audio
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2376
 TARGET_SCREEN_WIDTH := 1080
