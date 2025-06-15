@@ -8,6 +8,10 @@
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
+# Audio
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2376
 TARGET_SCREEN_WIDTH := 1080
@@ -15,6 +19,9 @@ TARGET_SCREEN_WIDTH := 1080
 # Display
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display_id_4630946342906530435.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946342906530435.xml
+
+# Fingerprint
+$(call soong_config_set,surfaceflinger,udfps_lib,//hardware/oplus:libudfps_extension.oplus)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -29,6 +36,10 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator.service.oplus-richtap
 
 # Inherit from the common OEM chipset makefile.
 $(call inherit-product, device/oneplus/sm8550-common/common.mk)
