@@ -47,6 +47,9 @@ PRODUCT_PACKAGES += \
     OPlusSettingsResTarget \
     OPlusSystemUIResTarget
 
+# Power
+$(call soong_config_set,qtipower,mode_ext_lib,power-ext-oplus)
+
 # Regional properties
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/vendor/odm/etc/23801/build.default.prop:$(TARGET_COPY_OUT_ODM)/etc/23801/build.default.prop \
