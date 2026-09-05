@@ -5,4 +5,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/custom_aston.mk
+    $(LOCAL_DIR)/custom_aston.mk \
+    $(LOCAL_DIR)/twrp_aston.mk
